@@ -29,7 +29,6 @@ class MineSweeper(private val fieldX: Int, private val fieldY: Int) {
         mines = readln().toInt()
 
         fieldSetup()
-        printPlayerField()
 
         while (isGameOngoing) {
             printPlayerField()
@@ -116,7 +115,7 @@ class MineSweeper(private val fieldX: Int, private val fieldY: Int) {
             println(Messages.NumberError.str)
             return
         } else if (playerField[moveY][moveX] == DOT) playerField[moveY][moveX] = STAR
-        victory(minesMarked, "mines found")
+        victory(minesMarked, "all mines found")
     }
 
     private fun fieldSetup() {
